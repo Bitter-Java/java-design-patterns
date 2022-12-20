@@ -10,6 +10,9 @@ import java.util.concurrent.atomic.AtomicLong;
  * @description
  */
 public enum Enumerate {
+  /**
+   * enum
+   */
   INSTANCE;
   private final AtomicLong id = new AtomicLong(0);
 
