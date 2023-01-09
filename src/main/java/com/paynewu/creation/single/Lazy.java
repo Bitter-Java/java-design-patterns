@@ -12,17 +12,17 @@ import java.util.concurrent.atomic.AtomicLong;
 public class Lazy {
 
   private static final AtomicLong ID = new AtomicLong();
-  private static Lazy instance = new Lazy();
+  private static Lazy INSTANCE = new Lazy();
 
   private Lazy() {
 
   }
 
   public static synchronized Lazy getInstance() {
-    if (instance == null) {
-      instance = new Lazy();
+    if (INSTANCE == null) {
+      INSTANCE = new Lazy();
     }
-    return instance;
+    return INSTANCE;
   }
 
   public static long getId() {

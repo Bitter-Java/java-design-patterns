@@ -12,21 +12,21 @@ import java.util.concurrent.atomic.AtomicLong;
 public class DoubleCheck {
 
   private static final AtomicLong ID = new AtomicLong();
-  private static volatile DoubleCheck instance = new DoubleCheck();
+  private static volatile DoubleCheck INSTANCE = new DoubleCheck();
 
   private DoubleCheck() {
 
   }
 
   public static DoubleCheck getInstance() {
-    if (instance == null) {
+    if (INSTANCE == null) {
       synchronized (DoubleCheck.class) {
-        if (instance == null) {
-          instance = new DoubleCheck();
+        if (INSTANCE == null) {
+          INSTANCE = new DoubleCheck();
         }
       }
     }
-    return instance;
+    return INSTANCE;
   }
 
   public static long getId() {

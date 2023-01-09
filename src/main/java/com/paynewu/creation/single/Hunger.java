@@ -11,8 +11,8 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class Hunger {
 
-  private static final Hunger INSTANCE = new Hunger();
   private static final AtomicLong ID = new AtomicLong();
+  private static final Hunger INSTANCE = new Hunger();
 
   private Hunger() {
 
